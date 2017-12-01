@@ -1,0 +1,62 @@
+<?php
+/** @var \User\Entity\User $user */
+/** @var \Doctrine\ORM\EntityManager $entityManager */
+$this->headTitle("Manutenção");
+?>
+
+<h1>Manutenção de usuários/alunos</h1>
+
+<p>
+    <a href="<?= $this->url('admin/users', ['action' => 'add']); ?>">
+        Novo usuário
+    </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Chave</th>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Nível</th>
+        <th>Status</th>
+        <th>Ações</th>
+    </tr>
+    <?php foreach ($users as $user): ?>
+        <tr>
+            <td><?= $this->escapeHtml($user->getUserkey()); ?></td>
+            <td><?= $this->escapeHtml($user->getUsername()); ?></td>
+            <td><?= $this->escapeHtml($user->getUserfullname()); ?></td>
+            <td><?= $this->escapeHtml($user->getUseremail()); ?></td>
+            <td>(<?= $this->escapeHtml($user->getUserPhoneareacode()); ?>) <?= $this->escapeHtml($user->getUserPhonenumber()); ?></td>
+
+            <td>
+                <?php
+                  $queryBuilder = $entityManager->createQueryBuilder();
+                  $result = $queryBuilder->select('u, type')
+                      ->from(\User\Entity\User::class,'u')
+                      ->leftJoin('u.user_type','type')
+                      ->getQuery()
+                      ->getResult();
+                  dump($result);
+                  echo $this->escapeHtml($user->getUserType());
+                ?>
+            </td>
+
+            <td>
+                <?= $this->escapeHtml($user->getUserLevel()); ?>
+            </td>
+
+            <td><?= $this->escapeHtml($user->getUserstatus()); ?></td>
+            <td>
+                <a href="<?=$this->url('admin/users', ['action'=>'edit', 'id'=>$user->getUserkey()] );?>">
+                    Edit
+                </a>
+                <a href="<?=$this->url('admin/users', ['action'=>'delete', 'id'=>$user->getUserkey()] );?>">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
