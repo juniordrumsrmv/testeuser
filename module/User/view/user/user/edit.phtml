@@ -1,0 +1,240 @@
+<h1>Adição de novo usuário</h1>
+
+<?php
+
+/** @var \Zend\Form\Form $form */
+
+//Tipo
+$userType = $form->get('user_type');
+$userType->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Login/CPF
+$username = $form->get('username');
+$username->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Nome
+$name = $form->get('user_fullname');
+$name->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Email
+$userEmail = $form->get('user_email');
+$userEmail->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Senha
+$password = $form->get('password');
+$password->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Status
+$userStatus = $form->get('user_status');
+$userStatus->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Nivel
+$userLevel = $form->get('user_level');
+$userLevel->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Endereco
+$userAddress = $form->get('user_address');
+$userAddress->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Numero
+$userNumber = $form->get('user_number');
+$userNumber->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Complemento
+$userComple = $form->get('user_comple');
+$userComple->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Bairro
+$userNeig = $form->get('user_neig');
+$userNeig->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Cidade
+$userCity = $form->get('user_city');
+$userCity->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//UF
+$userState = $form->get('user_state');
+$userState->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Pais
+$userCountry = $form->get('user_country');
+$userCountry->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//CEP
+$userZip = $form->get('user_zip');
+$userZip->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//DDD
+$userDDD = $form->get('user_phone_area_code');
+$userDDD->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Telefone
+$userPhone = $form->get('user_phone_number');
+$userPhone->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+//Botao
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-warning');
+
+$form->setAttribute('action', $this->url('admin/users', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+
+<div class="row">
+
+    <div class="col-sm-6">
+        <?php $message = $this->formElementErrors($username, ['class' => 'help-block']); ?>
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-6">
+                <?= $this->formLabel($username); ?>
+                <?= $this->formElement($username); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+        <?php $message = $this->formElementErrors($name, ['class' => 'help-block']); ?>
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-9">
+            <?= $this->formLabel($name); ?>
+            <?= $this->formElement($name); ?>
+            <?= $message ?>
+            </div>
+        </div>
+
+        <?php $message = $this->formElementErrors($userEmail, ['class' => 'help-block']); ?>
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-9">
+            <?= $this->formLabel($userEmail); ?>
+            <?= $this->formElement($userEmail); ?>
+            <?= $message ?>
+            </div>
+        </div>
+
+        <?php $message = $this->formElementErrors($password, ['class' => 'help-block']); ?>
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-6">
+                <?= $this->formLabel($password); ?>
+                <?= $this->formElement($password); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+        <?php $message = $this->formElementErrors($userType, ['class' => 'help-block']); ?>
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-6">
+                <?= $this->formLabel($userType); ?>
+                <?= $this->formElement($userType); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-5">
+                <?= $this->formLabel($userLevel); ?>
+                <?= $this->formElement($userLevel); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+        <?php $message = $this->formElementErrors($userAddress, ['class' => 'help-block']); ?>
+        <div class="form-group<?= $message ? " has-error" : "" ?> ">
+            <?= $this->formLabel($userAddress); ?>
+            <?= $this->formElement($userAddress); ?>
+            <?= $message ?>
+        </div>
+
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-3">
+                <?= $this->formLabel($userNumber); ?>
+                <?= $this->formElement($userNumber); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-9">
+                <?= $this->formLabel($userComple); ?>
+                <?= $this->formElement($userComple); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-6">
+                <?= $this->formLabel($userNeig); ?>
+                <?= $this->formElement($userNeig); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-4">
+                <?= $this->formLabel($userCity); ?>
+                <?= $this->formElement($userCity); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-2">
+                <?= $this->formLabel($userState); ?>
+                <?= $this->formElement($userState); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-5">
+                <?= $this->formLabel($userCountry); ?>
+                <?= $this->formElement($userCountry); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-5">
+                <?= $this->formLabel($userZip); ?>
+                <?= $this->formElement($userZip); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+        <div class="form-group<?= $message ? " has-error" : "" ?> row">
+            <div class="col-lg-2">
+                <?= $this->formLabel($userDDD); ?>
+                <?= $this->formElement($userDDD); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-5">
+                <?= $this->formLabel($userPhone); ?>
+                <?= $this->formElement($userPhone); ?>
+                <?= $message ?>
+            </div>
+            <div class="col-lg-5 right">
+                <?= $this->formLabel($userStatus); ?>
+                <?= $this->formElement($userStatus); ?>
+                <?= $message ?>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+        <?= $this->formSubmit($submit); ?>
+        <a href="<?= $this->url('admin/users'); ?>" class="btn btn-default btn-md">
+            Voltar
+        </a>
+    </div>
+</div>
+
+<?php
+echo $this->formHidden($form->get('user_key'));
+echo $this->form()->closeTag();
+?>
