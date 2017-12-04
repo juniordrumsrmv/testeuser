@@ -24,8 +24,8 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_type", type="smallint", nullable=false)
-     * @ORM\OneToOne(targetEntity="User\Entity\UserType", mappedBy="user_type")
+     * @ORM\OneToOne(targetEntity="User\Entity\UserType", inversedBy="users")
+     * @ORM\JoinColumn(name="user_type", referencedColumnName="user_type")
      */
     private $userType;
 

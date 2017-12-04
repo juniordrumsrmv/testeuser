@@ -41,7 +41,7 @@ $this->headTitle("Manutenção");
                     ->setParameter('usertype', $user->getUserType())
                     ->getQuery()
                     ->getArrayResult();
-                echo $result[0][nameType];
+                echo $result[0]['nameType'];
                 ?>
             </td>
 
@@ -54,7 +54,7 @@ $this->headTitle("Manutenção");
                     ->setParameter('userlevel', $user->getUserLevel())
                     ->getQuery()
                     ->getArrayResult();
-                echo $result[0][nameLevel];
+                echo $result[0]['nameLevel'];
                 ?>
             </td>
 
@@ -67,7 +67,7 @@ $this->headTitle("Manutenção");
                     ->setParameter('userstatus', $user->getUserStatus())
                     ->getQuery()
                     ->getArrayResult();
-                echo $result[0][nameStatus];
+                echo $result[0]['nameStatus'];
                 ?>
             </td>
             <td>

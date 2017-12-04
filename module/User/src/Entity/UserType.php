@@ -18,7 +18,6 @@ class UserType
      * @ORM\Column(name="user_type", type="smallint", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @ORM\OneToOne(targetEntity="User\Entity\User", inversedBy="user_type")
      */
     private $userType;
 
@@ -28,6 +27,13 @@ class UserType
      * @ORM\Column(name="name_type", type="string", length=30, precision=0, scale=0, nullable=true, unique=false)
      */
     private $nameType;
+
+    /**
+     * @var integer
+     *
+     * @ORM\OneToOne(targetEntity="User\Entity\User", mappedBy="userType")
+     */
+    private $user;
 
 
     /**
@@ -63,5 +69,22 @@ class UserType
     {
         return $this->nameType;
     }
+
+    /**
+     * @return int
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param int $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
 }
 

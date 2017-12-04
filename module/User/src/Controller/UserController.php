@@ -54,6 +54,7 @@ class UserController extends AbstractActionController
         $request = $this->getRequest();
 
         if (!$request->isPost()) {
+            echo "NAO EH POST";
             return [
                 'form'   => $form
             ];
@@ -62,6 +63,8 @@ class UserController extends AbstractActionController
         $form->setData($request->getPost());
 
         if (!$form->isValid()) {
+            print_r($form->getMessages());
+            echo "NAO EH VALIDO";
             return [
                 'form'   => $form,
             ];

@@ -112,170 +112,170 @@ class UserInputFilter extends InputFilter
             ]
         ]);
 
-//        $this->add([
-//            'name' => 'user_level',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
+        $this->add([
+            'name' => 'user_level',
+            'required' => true,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
 
-//        $this->add([
-//            'name' => 'user_address',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_number',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_comple',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_neig',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_city',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_state',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_country',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
-//
-//        $this->add([
-//            'name' => 'user_zip',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
+        $this->add([
+            'name' => 'user_address',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
 
-//        $this->add([
-//            'name' => 'user_phone_area_code',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
+        $this->add([
+            'name' => 'user_number',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
 
-//        $this->add([
-//            'name' => 'user_phone_number',
-//            'required' => true,
-//            'validators' => [
-//                [
-//                    'name' => NotEmpty::class,
-//                    'options' => [
-//                        'messages' => [
-//                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
-//                        ]
-//                    ]
-//                ]
-//            ]
-//        ]);
+        $this->add([
+            'name' => 'user_comple',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_neig',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_city',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_state',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_country',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_zip',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_phone_area_code',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+
+        $this->add([
+            'name' => 'user_phone_number',
+            'required' => false,
+            'validators' => [
+                [
+                    'name' => NotEmpty::class,
+                    'options' => [
+                        'messages' => [
+                            NotEmpty::IS_EMPTY => 'O campo é requerido!'
+                        ]
+                    ]
+                ]
+            ]
+        ]);
 
     }
 
