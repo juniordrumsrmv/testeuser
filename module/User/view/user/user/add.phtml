@@ -91,7 +91,7 @@ $userPhone->setAttribute('class', 'form-control')
 
 //Botao
 $submit = $form->get('submit');
-$submit->setAttribute('class', 'btn btn-primary');
+$submit->setAttribute('class', 'btn btn-warning');
 
 $form->setAttribute('action', $this->url('admin/users', ['action' => 'add']));
 $form->prepare();
@@ -226,10 +226,15 @@ echo $this->form()->openTag($form);
 
     </div>
 
+    <div class="col-sm-6">
+        <?= $this->formSubmit($submit); ?>
+        <a href="<?= $this->url('admin/users'); ?>" class="btn btn-default btn-md">
+            Voltar
+        </a>
+    </div>
 </div>
 
 <?php
-echo $this->formSubmit($submit);
 echo $this->formHidden($form->get('user_key'));
 echo $this->form()->closeTag();
 ?>

@@ -2,14 +2,12 @@
 
 namespace User\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Users
  *
- * @ORM\Table(name="users")
+ * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_1483A5E9F85E0677", columns={"username"})})
  * @ORM\Entity
  */
 class User
@@ -19,7 +17,7 @@ class User
      *
      * @ORM\Column(name="user_key", type="bigint", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $userKey;
 
@@ -27,15 +25,14 @@ class User
      * @var integer
      *
      * @ORM\Column(name="user_type", type="smallint", nullable=false)
-     * @ORM\OneToMany(targetEntity="User\Entity\UserType", mappedBy="users")
-     * @ORM\JoinColumn(name="user_type", referencedColumnName="user_type")
+     * @ORM\OneToOne(targetEntity="User\Entity\UserType", mappedBy="user_type")
      */
     private $userType;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="username", type="bigint", nullable=false, unique=true)
+     * @ORM\Column(name="username", type="bigint", nullable=false)
      */
     private $username;
 
@@ -68,7 +65,7 @@ class User
     private $userStatus;
 
     /**
-     * @var Collection
+     * @var integer
      *
      * @ORM\Column(name="user_level", type="smallint", nullable=false)
      */
@@ -152,27 +149,6 @@ class User
     private $cadDate;
 
 
-    /**
-     * User constructor.
-     */
-    public function __construct()
-    {
-        $this->userType = new ArrayCollection();
-    }
-
-    /**
-     * Set userKey
-     *
-     * @param integer $userKey
-     *
-     * @return User
-     */
-    public function setUserKey($userKey)
-    {
-        $this->userKey = $userKey;
-
-        return $this;
-    }
 
     /**
      * Get userKey
@@ -189,7 +165,7 @@ class User
      *
      * @param integer $userType
      *
-     * @return User
+     * @return Users
      */
     public function setUserType($userType)
     {
@@ -213,7 +189,7 @@ class User
      *
      * @param integer $username
      *
-     * @return User
+     * @return Users
      */
     public function setUsername($username)
     {
@@ -237,7 +213,7 @@ class User
      *
      * @param string $userFullname
      *
-     * @return User
+     * @return Users
      */
     public function setUserFullname($userFullname)
     {
@@ -261,7 +237,7 @@ class User
      *
      * @param string $userEmail
      *
-     * @return User
+     * @return Users
      */
     public function setUserEmail($userEmail)
     {
@@ -285,7 +261,7 @@ class User
      *
      * @param string $password
      *
-     * @return User
+     * @return Users
      */
     public function setPassword($password)
     {
@@ -309,7 +285,7 @@ class User
      *
      * @param integer $userStatus
      *
-     * @return User
+     * @return Users
      */
     public function setUserStatus($userStatus)
     {
@@ -331,9 +307,9 @@ class User
     /**
      * Set userLevel
      *
-     * @param null|User\Entity\UserLevel $userLevel
+     * @param integer $userLevel
      *
-     * @return User
+     * @return Users
      */
     public function setUserLevel($userLevel)
     {
@@ -357,7 +333,7 @@ class User
      *
      * @param string $userAddress
      *
-     * @return User
+     * @return Users
      */
     public function setUserAddress($userAddress)
     {
@@ -381,7 +357,7 @@ class User
      *
      * @param string $userNumber
      *
-     * @return User
+     * @return Users
      */
     public function setUserNumber($userNumber)
     {
@@ -405,7 +381,7 @@ class User
      *
      * @param string $userComple
      *
-     * @return User
+     * @return Users
      */
     public function setUserComple($userComple)
     {
@@ -429,7 +405,7 @@ class User
      *
      * @param string $userNeig
      *
-     * @return User
+     * @return Users
      */
     public function setUserNeig($userNeig)
     {
@@ -453,7 +429,7 @@ class User
      *
      * @param string $userCity
      *
-     * @return User
+     * @return Users
      */
     public function setUserCity($userCity)
     {
@@ -477,7 +453,7 @@ class User
      *
      * @param string $userState
      *
-     * @return User
+     * @return Users
      */
     public function setUserState($userState)
     {
@@ -501,7 +477,7 @@ class User
      *
      * @param string $userZip
      *
-     * @return User
+     * @return Users
      */
     public function setUserZip($userZip)
     {
@@ -525,7 +501,7 @@ class User
      *
      * @param string $userCountry
      *
-     * @return User
+     * @return Users
      */
     public function setUserCountry($userCountry)
     {
@@ -549,7 +525,7 @@ class User
      *
      * @param string $userPhoneAreaCode
      *
-     * @return User
+     * @return Users
      */
     public function setUserPhoneAreaCode($userPhoneAreaCode)
     {
@@ -573,7 +549,7 @@ class User
      *
      * @param string $userPhoneNumber
      *
-     * @return User
+     * @return Users
      */
     public function setUserPhoneNumber($userPhoneNumber)
     {
@@ -597,7 +573,7 @@ class User
      *
      * @param \DateTime $cadDate
      *
-     * @return User
+     * @return Users
      */
     public function setCadDate($cadDate)
     {

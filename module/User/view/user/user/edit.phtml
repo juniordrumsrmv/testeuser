@@ -93,7 +93,7 @@ $userPhone->setAttribute('class', 'form-control')
 $submit = $form->get('submit');
 $submit->setAttribute('class', 'btn btn-warning');
 
-$form->setAttribute('action', $this->url('admin/users', ['action' => 'add']));
+$form->setAttribute('action', $this->url('admin/users', ['action' => 'edit', 'id' => $id]));
 $form->prepare();
 
 echo $this->form()->openTag($form);

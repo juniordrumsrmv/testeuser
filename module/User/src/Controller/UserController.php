@@ -67,10 +67,44 @@ class UserController extends AbstractActionController
             ];
         }
 
-        $post = $form->getData();
-        $this->entityManager->persist($post);
+        $user = $form->getData();
+        $this->entityManager->persist($user);
         $this->entityManager->flush();
 
+        return $this->redirect()->toRoute('admin/users');
+    }
+
+    public function editAction()
+    {
+        $id = (int)$this->params()->fromRoute('id', 0);
+
+        if (!$id || !($user = $this->repository->find($id))) {
+            return $this->redirect()->toRoute('admin/users');
+        }
+
+        $form = $this->form;
+        $form->bind($user);
+        $form->get('submit')->setAttribute('value', 'Editar');
+
+        $request = $this->getRequest();
+        if (!$request->isPost()) {
+            return [
+                'id' => $id,
+                'form' => $form
+            ];
+        }
+
+        $form->setData($request->getPost());
+        if ( !$form->isValid() ) {
+            echo "SDS";
+            return [
+                'id' => $id,
+                'form' => $form
+            ];
+        }
+
+        $this->entityManager->flush();
+        echo $this->entityManager->getExpressionBuilder();
         return $this->redirect()->toRoute('admin/users');
     }
 
