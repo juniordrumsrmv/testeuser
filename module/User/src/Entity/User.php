@@ -15,16 +15,16 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_key", type="bigint", nullable=false)
+     * @ORM\Column(name="user_key", type="bigint")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $userKey;
 
     /**
      * @var integer
      *
-     * @ORM\OneToOne(targetEntity="User\Entity\UserType", inversedBy="users")
+     * @ORM\ManyToOne(targetEntity="User\Entity\UserType", inversedBy="user")
      * @ORM\JoinColumn(name="user_type", referencedColumnName="user_type")
      */
     private $userType;
@@ -60,14 +60,16 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_status", type="smallint", nullable=false)
+     * @ORM\ManyToOne(targetEntity="User\Entity\UserStatus", inversedBy="user")
+     * @ORM\JoinColumn(name="user_status", referencedColumnName="user_status")
      */
     private $userStatus;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_level", type="smallint", nullable=false)
+     * @ORM\ManyToOne(targetEntity="User\Entity\UserLevel", inversedBy="user")
+     * @ORM\JoinColumn(name="user_level", referencedColumnName="user_level")
      */
     private $userLevel;
 
@@ -148,6 +150,13 @@ class User
      */
     private $cadDate;
 
+    /**
+     * @param int $userKey
+     */
+    public function setUserKey($userKey)
+    {
+        $this->userKey = $userKey;
+    }
 
 
     /**

@@ -7,7 +7,6 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use User\Entity\UserType;
 
 class UserController extends AbstractActionController
 {
@@ -107,8 +106,21 @@ class UserController extends AbstractActionController
         }
 
         $this->entityManager->flush();
-        echo $this->entityManager->getExpressionBuilder();
         return $this->redirect()->toRoute('admin/users');
+    }
+
+    public function deleteAction()
+    {
+        $id = (int)$this->params()->fromRoute('id', 0);
+
+        if (!$id || !($user = $this->repository->find($id))) {
+            return $this->redirect()->toRoute('admin/users');
+        }
+
+        $this->entityManager->remove($user);
+        $this->entityManager->flush();
+        return $this->redirect()->toRoute('admin/users');
+
     }
 
 }

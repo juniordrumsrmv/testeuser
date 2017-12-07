@@ -17,7 +17,6 @@ class UserType
      *
      * @ORM\Column(name="user_type", type="smallint", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $userType;
 
@@ -31,10 +30,9 @@ class UserType
     /**
      * @var integer
      *
-     * @ORM\OneToOne(targetEntity="User\Entity\User", mappedBy="userType")
+     * @ORM\OneToMany(targetEntity="User\Entity\User", mappedBy="userType")
      */
     private $user;
-
 
     /**
      * Get userType
@@ -85,6 +83,7 @@ class UserType
     {
         $this->user = $user;
     }
+
 
 }
 

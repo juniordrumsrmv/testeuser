@@ -27,7 +27,12 @@ class UserStatus
      */
     private $nameStatus;
 
-
+    /**
+     * @var integer
+     *
+     * @ORM\OneToMany(targetEntity="User\Entity\User", mappedBy="userStatus")
+     */
+    private $user;
 
     /**
      * Get userStatus

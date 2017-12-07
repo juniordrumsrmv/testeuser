@@ -16,7 +16,7 @@ class UserFixture implements FixtureInterface {
     public function load(ObjectManager $manager)
     {
         $user = new User();
-        $user->setUserKey(0)
+        $user->setUserKey('0')
             ->setUserType(1)
             ->setUsername("37844582898")
             ->setUserFullname("Bianou Oliveira")

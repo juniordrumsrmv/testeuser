@@ -34,42 +34,41 @@ $this->headTitle("Manutenção");
 
             <td>
                 <?php
-                $queryBuilder = $entityManager->createQueryBuilder();
-                $result = $queryBuilder->select('ut')
-                    ->from(\User\Entity\UserType::class,'ut')
-                    ->andWhere("ut.userType = :usertype")
-                    ->setParameter('usertype', $user->getUserType())
-                    ->getQuery()
-                    ->getArrayResult();
-                echo $result[0]['nameType'];
+                    echo $user->getUserType()->getNameType();
                 ?>
             </td>
 
-            <td>
-                <?php
-                $queryBuilder = $entityManager->createQueryBuilder();
-                $result = $queryBuilder->select('ul')
-                    ->from(\User\Entity\UserLevel::class,'ul')
-                    ->andWhere("ul.userLevel = :userlevel")
-                    ->setParameter('userlevel', $user->getUserLevel())
-                    ->getQuery()
-                    ->getArrayResult();
-                echo $result[0]['nameLevel'];
-                ?>
-            </td>
+<!--            <td>-->
+<!--                --><?php
+//                echo $user->getUserLevel()->getNameLevel();
+//                ?>
+<!--            </td>-->
 
-            <td>
-                <?php
-                $queryBuilder = $entityManager->createQueryBuilder();
-                $result = $queryBuilder->select('us')
-                    ->from(\User\Entity\UserStatus::class,'us')
-                    ->andWhere("us.userStatus = :userstatus")
-                    ->setParameter('userstatus', $user->getUserStatus())
-                    ->getQuery()
-                    ->getArrayResult();
-                echo $result[0]['nameStatus'];
-                ?>
-            </td>
+<!--            <td>-->
+<!--                --><?php
+//                $queryBuilder = $entityManager->createQueryBuilder();
+//                $result = $queryBuilder->select('ul')
+//                    ->from(\User\Entity\UserLevel::class,'ul')
+//                    ->andWhere("ul.userLevel = :userlevel")
+//                    ->setParameter('userlevel', $user->getUserLevel())
+//                    ->getQuery()
+//                    ->getArrayResult();
+//                echo $result[0]['nameLevel'];
+//                ?>
+<!--            </td>-->
+<!---->
+<!--            <td>-->
+<!--                --><?php
+//                $queryBuilder = $entityManager->createQueryBuilder();
+//                $result = $queryBuilder->select('us')
+//                    ->from(\User\Entity\UserStatus::class,'us')
+//                    ->andWhere("us.userStatus = :userstatus")
+//                    ->setParameter('userstatus', $user->getUserStatus())
+//                    ->getQuery()
+//                    ->getArrayResult();
+//                echo $result[0]['nameStatus'];
+//                ?>
+<!--            </td>-->
             <td>
                 <a href="<?=$this->url('admin/users', ['action'=>'edit', 'id'=>$user->getUserkey()] );?>"
                    class="btn btn-info btn-sm">

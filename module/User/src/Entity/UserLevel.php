@@ -17,7 +17,6 @@ class UserLevel
      *
      * @ORM\Column(name="user_level", type="smallint", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $userLevel;
 
@@ -27,6 +26,13 @@ class UserLevel
      * @ORM\Column(name="name_level", type="string", length=30, nullable=true)
      */
     private $nameLevel;
+
+    /**
+     * @var integer
+     *
+     * @ORM\OneToMany(targetEntity="User\Entity\User", mappedBy="userLevel")
+     */
+    private $user;
 
     /**
      * @return int
