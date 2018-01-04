@@ -66,10 +66,6 @@ class ComposerStaticInit719247e1dbc1dc4498aaddb66ba17305
         array (
             'Webmozart\\Assert\\' => 17,
         ),
-        'U' => 
-        array (
-            'User\\' => 5,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -99,10 +95,6 @@ class ComposerStaticInit719247e1dbc1dc4498aaddb66ba17305
         array (
             'CodeEdu\\DoctrineFixture\\' => 24,
             'CodeEdu\\' => 8,
-        ),
-        'B' => 
-        array (
-            'Blog\\' => 5,
         ),
         'A' => 
         array (
@@ -286,10 +278,6 @@ class ComposerStaticInit719247e1dbc1dc4498aaddb66ba17305
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'User\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/User/src',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -349,10 +337,6 @@ class ComposerStaticInit719247e1dbc1dc4498aaddb66ba17305
         'CodeEdu\\' => 
         array (
             0 => __DIR__ . '/..' . '/codeedu/zendexpr-doctrine-fixture/src',
-        ),
-        'Blog\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/Blog/src',
         ),
         'Application\\' => 
         array (

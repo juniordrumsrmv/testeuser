@@ -49,7 +49,6 @@ return array(
     'ZendDeveloperTools\\' => array($vendorDir . '/zendframework/zend-developer-tools/src'),
     'ZF\\DevelopmentMode\\' => array($vendorDir . '/zfcampus/zf-development-mode/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
-    'User\\' => array($baseDir . '/module/User/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
@@ -65,7 +64,6 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'CodeEdu\\DoctrineFixture\\' => array($vendorDir . '/codeedu/zend-doctrine-fixture/src'),
     'CodeEdu\\' => array($vendorDir . '/codeedu/zendexpr-doctrine-fixture/src'),
-    'Blog\\' => array($baseDir . '/module/Blog/src'),
     'Application\\' => array($baseDir . '/module/Application/src'),
     'ApplicationTest\\' => array($baseDir . '/module/Application/test'),
 );

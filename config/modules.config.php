@@ -30,6 +30,5 @@ return [
     'Zend\Validator',
     'DoctrineModule',
     'DoctrineORMModule',
-    'Application',
-    'User'
+    'Application'
 ];

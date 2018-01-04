@@ -4,9 +4,9 @@ return [
         'connection' => [
             'orm_default' => [
                 'params' => [
-                    'user' => 'root',
-                    'password' => 'root',
-                    'dbname' => 'one_english'
+                    'user' => 'emporium',
+                    'password' => 'emporium',
+                    'dbname' => 'emporium_megabox'
                 ],
             ],
         ],
